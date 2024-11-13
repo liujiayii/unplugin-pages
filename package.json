@@ -1,9 +1,9 @@
 {
   "name": "unplugin-pages",
   "type": "module",
-  "version": "0.32.3",
+  "version": "0.0.1-alpha.1",
   "packageManager": "pnpm@9.12.3",
-  "description": "File system base vue-router plugin for Vite",
+  "description": "File system base router plugin for unplugin",
   "author": "hannoeru <me@hanlee.co>",
   "license": "MIT",
   "homepage": "https://github.com/hannoeru/unplugin-pages",
