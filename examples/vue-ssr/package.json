@@ -7,7 +7,7 @@
     "build": "pnpm build:client && pnpm build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
-    "generate": "DEBUG=unplugin-pages:* vite build --ssrManifest --outDir dist/static && yarn build:server && esno prerender",
+    "generate": "DEBUG=unplugin-convention-routes:* vite build --ssrManifest --outDir dist/static && yarn build:server && esno prerender",
     "serve": "NODE_ENV=production esno server"
   },
   "dependencies": {
@@ -29,7 +29,7 @@
     "nodemon": "^3.1.7",
     "serve-static": "^1.16.2",
     "typescript": "^5.6.2",
-    "unplugin-pages": "workspace:*",
+    "unplugin-convention-routes": "workspace:*",
     "vite": "^5.4.11"
   }
 }

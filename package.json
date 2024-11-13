@@ -1,17 +1,17 @@
 {
-  "name": "unplugin-pages",
+  "name": "unplugin-convention-routes",
   "type": "module",
   "version": "0.0.1-alpha.1",
   "packageManager": "pnpm@9.12.3",
   "description": "File system base router plugin for unplugin",
   "author": "hannoeru <me@hanlee.co>",
   "license": "MIT",
-  "homepage": "https://github.com/hannoeru/unplugin-pages",
+  "homepage": "https://github.com/hannoeru/unplugin-convention-routes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hannoeru/unplugin-pages"
+    "url": "https://github.com/hannoeru/unplugin-convention-routes"
   },
-  "bugs": "https://github.com/hannoeru/unplugin-pages/issues",
+  "bugs": "https://github.com/hannoeru/unplugin-convention-routes/issues",
   "keywords": [
     "vite",
     "vue",

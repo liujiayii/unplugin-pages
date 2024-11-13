@@ -26,7 +26,7 @@ function prepareRoutes(
   routes: ReactRoute[],
   options: ResolvedOptions,
   parent?: ReactRoute,
-) {
+): ReactRoute[] {
   for (const route of routes) {
     if (parent)
       route.path = route.path?.replace(/^\//, '')
@@ -109,7 +109,7 @@ async function computeReactRoutes(ctx: PageContext): Promise<ReactRoute[]> {
   return finalRoutes
 }
 
-async function resolveReactRoutes(ctx: PageContext) {
+async function resolveReactRoutes(ctx: PageContext): Promise<string> {
   const finalRoutes = await computeReactRoutes(ctx)
   let client = generateClientCode(finalRoutes, ctx.options)
   client = (await ctx.options.onClientGenerated?.(client)) || client

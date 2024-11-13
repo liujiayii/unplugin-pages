@@ -47,7 +47,7 @@ export async function parseSFC(code: string): Promise<SFCDescriptor> {
     })
   }
   catch {
-    throw new Error('[unplugin-pages] Vue3\'s "@vue/compiler-sfc" is required.')
+    throw new Error('[unplugin-convention-routes] Vue3\'s "@vue/compiler-sfc" is required.')
   }
 }
 
@@ -82,7 +82,7 @@ export function parseCustomBlock(block: SFCBlock, filePath: string, options: Res
   }
 }
 
-export async function getRouteBlock(path: string, options: ResolvedOptions) {
+export async function getRouteBlock(path: string, options: ResolvedOptions): Promise<CustomBlock | undefined> {
   const content = fs.readFileSync(path, 'utf8')
 
   const parsedSFC = await parseSFC(content)

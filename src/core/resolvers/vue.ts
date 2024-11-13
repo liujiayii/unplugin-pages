@@ -1,9 +1,9 @@
 import type { PageContext } from '../context'
 import type { CustomBlock, Optional, PageResolver } from '../types'
-import { dequal } from 'dequal'
-import colors from 'picocolors'
+// import { dequal } from 'dequal'
+// import colors from 'picocolors'
 
-import { getRouteBlock } from '../customBlock'
+// import { getRouteBlock } from '../customBlock'
 import { generateClientCode } from '../stringify'
 import {
   countSlash,
@@ -31,7 +31,7 @@ function prepareRoutes(
   ctx: PageContext,
   routes: VueRoute[],
   parent?: VueRoute,
-) {
+): VueRoute[] {
   for (const route of routes) {
     if (route.name)
       route.name = route.name.replace(new RegExp(`${ctx.options.routeNameSeparator}index$`), '')
@@ -158,7 +158,7 @@ async function computeVueRoutes(ctx: PageContext, customBlockMap: Map<string, Cu
   return finalRoutes
 }
 
-async function resolveVueRoutes(ctx: PageContext, customBlockMap: Map<string, CustomBlock>) {
+async function resolveVueRoutes(ctx: PageContext, customBlockMap: Map<string, CustomBlock>): Promise<string> {
   const finalRoutes = await computeVueRoutes(ctx, customBlockMap)
 
   let client = generateClientCode(finalRoutes, ctx.options)
@@ -169,32 +169,32 @@ async function resolveVueRoutes(ctx: PageContext, customBlockMap: Map<string, Cu
 export function vueResolver(): PageResolver {
   const customBlockMap = new Map<string, CustomBlock>()
 
-  async function checkCustomBlockChange(ctx: PageContext, path: string) {
-    const exitsCustomBlock = customBlockMap.get(path)
-    let customBlock: CustomBlock | undefined
-    try {
-      customBlock = await getRouteBlock(path, ctx.options)
-    }
-    // eslint-disable-next-line unused-imports/no-unused-vars
-    catch (error: any) {
-      // ctx.logger?.error(colors.red(`[unplugin-pages] ${error.message}`))
-      return
-    }
-    if (!exitsCustomBlock && !customBlock)
-      return
+  // async function checkCustomBlockChange(ctx: PageContext, path: string): Promise<void> {
+  //   const exitsCustomBlock = customBlockMap.get(path)
+  //   let customBlock: CustomBlock | undefined
+  //   try {
+  //     customBlock = await getRouteBlock(path, ctx.options)
+  //   }
+  //   // eslint-disable-next-line unused-imports/no-unused-vars
+  //   catch (error: any) {
+  //     // ctx.logger?.error(colors.red(`[unplugin-convention-routes] ${error.message}`))
+  //     return
+  //   }
+  //   if (!exitsCustomBlock && !customBlock)
+  //     return
 
-    if (!customBlock) {
-      customBlockMap.delete(path)
-      ctx.debug.routeBlock('%s deleted', path)
-      return
-    }
-    if (!exitsCustomBlock || !dequal(exitsCustomBlock, customBlock)) {
-      ctx.debug.routeBlock('%s old: %O', path, exitsCustomBlock)
-      ctx.debug.routeBlock('%s new: %O', path, customBlock)
-      customBlockMap.set(path, customBlock)
-      ctx.onUpdate()
-    }
-  }
+  //   if (!customBlock) {
+  //     customBlockMap.delete(path)
+  //     ctx.debug.routeBlock('%s deleted', path)
+  //     return
+  //   }
+  //   if (!exitsCustomBlock || !dequal(exitsCustomBlock, customBlock)) {
+  //     ctx.debug.routeBlock('%s old: %O', path, exitsCustomBlock)
+  //     ctx.debug.routeBlock('%s new: %O', path, customBlock)
+  //     customBlockMap.set(path, customBlock)
+  //     ctx.onUpdate()
+  //   }
+  // }
 
   return {
     resolveExtensions() {

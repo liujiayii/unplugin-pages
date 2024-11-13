@@ -1,11 +1,11 @@
-# unplugin-pages
+# unplugin-convention-routes
 
-[![npm version](https://badgen.net/npm/v/unplugin-pages)](https://www.npmjs.com/package/unplugin-pages)
-[![monthly downloads](https://badgen.net/npm/dm/unplugin-pages)](https://www.npmjs.com/package/unplugin-pages)
-[![types](https://badgen.net/npm/types/unplugin-pages)](https://github.com/hannoeru/unplugin-pages/blob/main/src/types.ts)
-[![license](https://badgen.net/npm/license/unplugin-pages)](https://github.com/hannoeru/unplugin-pages/blob/main/LICENSE)
+[![npm version](https://badgen.net/npm/v/unplugin-convention-routes)](https://www.npmjs.com/package/unplugin-convention-routes)
+[![monthly downloads](https://badgen.net/npm/dm/unplugin-convention-routes)](https://www.npmjs.com/package/unplugin-convention-routes)
+[![types](https://badgen.net/npm/types/unplugin-convention-routes)](https://github.com/hannoeru/unplugin-convention-routes/blob/main/src/types.ts)
+[![license](https://badgen.net/npm/license/unplugin-convention-routes)](https://github.com/hannoeru/unplugin-convention-routes/blob/main/LICENSE)
 
-[![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc)](https://open.vscode.dev/hannoeru/unplugin-pages)
+[![Open in Visual Studio Code](https://img.shields.io/static/v1?logo=visualstudiocode&label=&message=Open%20in%20Visual%20Studio%20Code&labelColor=2c2c32&color=007acc&logoColor=007acc)](https://open.vscode.dev/hannoeru/unplugin-convention-routes)
 
 > File system based routing for Vue 3 / React / Solid applications using
 > [Vite](https://github.com/vitejs/vite)
@@ -18,12 +18,12 @@
 
 We recommend that Vue users use [unplugin-vue-router](https://github.com/posva/unplugin-vue-router) instead of this plugin.
 
-[unplugin-vue-router](https://github.com/posva/unplugin-vue-router) is a unplugin library created by [@posva](https://github.com/posva), same auther as vue-router. It provide almost same feature as [unplugin-pages](https://github.com/hannoeru/unplugin-pages) but better intergration with vue-router, include some cool feature like auto generate route types base on your route files to provide autocomplete for vue-router.
+[unplugin-vue-router](https://github.com/posva/unplugin-vue-router) is a unplugin library created by [@posva](https://github.com/posva), same auther as vue-router. It provide almost same feature as [unplugin-convention-routes](https://github.com/hannoeru/unplugin-convention-routes) but better intergration with vue-router, include some cool feature like auto generate route types base on your route files to provide autocomplete for vue-router.
 
 #### Install:
 
 ```bash
-npm install -D unplugin-pages
+npm install -D unplugin-convention-routes
 npm install vue-router
 ```
 
@@ -34,7 +34,7 @@ npm install vue-router
 #### Install:
 
 ```bash
-npm install -D unplugin-pages
+npm install -D unplugin-convention-routes
 npm install react-router react-router-dom
 ```
 
@@ -43,7 +43,7 @@ npm install react-router react-router-dom
 #### Install:
 
 ```bash
-npm install -D unplugin-pages
+npm install -D unplugin-convention-routes
 npm install @solidjs/router
 ```
 
@@ -52,7 +52,7 @@ npm install @solidjs/router
 Add to your `vite.config.js`:
 
 ```js
-import Pages from 'unplugin-pages'
+import Pages from 'unplugin-convention-routes'
 
 export default {
   plugins: [
@@ -86,7 +86,7 @@ const router = createRouter({
 
 ```ts
 // vite-env.d.ts
-/// <reference types="unplugin-pages/client" />
+/// <reference types="unplugin-convention-routes/client" />
 ```
 
 ### React
@@ -126,7 +126,7 @@ app.render(
 
 ```ts
 // vite-env.d.ts
-/// <reference types="unplugin-pages/client-react" />
+/// <reference types="unplugin-convention-routes/client-react" />
 ```
 
 ### Solid
@@ -155,7 +155,7 @@ render(
 
 ```ts
 // vite-env.d.ts
-/// <reference types="unplugin-pages/client-solid" />
+/// <reference types="unplugin-convention-routes/client-solid" />
 ```
 
 ## Configuration
@@ -165,7 +165,7 @@ plugin:
 
 ```js
 // vite.config.js
-import Pages from 'unplugin-pages'
+import Pages from 'unplugin-convention-routes'
 
 export default {
   plugins: [
@@ -360,7 +360,7 @@ export default {
 }
 ```
 
-See [#492](https://github.com/hannoeru/unplugin-pages/issues/492) for more details.
+See [#492](https://github.com/hannoeru/unplugin-convention-routes/issues/492) for more details.
 
 ### routeBlockLang
 
@@ -626,7 +626,7 @@ of the prop in which the route parameters are passed.
 
 ## Sitemap generation
 
-If you need to generate a sitemap from generated routes, you can use [unplugin-pages-sitemap](https://github.com/jbaubree/unplugin-pages-sitemap).
+If you need to generate a sitemap from generated routes, you can use [unplugin-convention-routes-sitemap](https://github.com/jbaubree/unplugin-convention-routes-sitemap).
 This plugin allow you to automatically generate sitemap.xml and robots.xml files with customization.
 
 ## License

@@ -1,6 +1,6 @@
 import { defineConfig } from '@rsbuild/core'
 import { pluginReact } from '@rsbuild/plugin-react'
-import Pages from 'unplugin-pages/rspack'
+import Pages from 'unplugin-convention-routes/rspack'
 
 export default defineConfig({
   tools: {

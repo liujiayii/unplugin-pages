@@ -25,7 +25,7 @@ function prepareRoutes(
   options: ResolvedOptions,
   routes: SolidRoute[],
   parent?: SolidRoute,
-) {
+): SolidRoute[] {
   for (const route of routes) {
     if (parent)
       route.path = route.path?.replace(/^\//, '')
@@ -112,7 +112,7 @@ async function computeSolidRoutes(ctx: PageContext): Promise<SolidRoute[]> {
   return finalRoutes
 }
 
-async function resolveSolidRoutes(ctx: PageContext) {
+async function resolveSolidRoutes(ctx: PageContext): Promise<string> {
   const finalRoutes = await computeSolidRoutes(ctx)
   let client = generateClientCode(finalRoutes, ctx.options)
   client = (await ctx.options.onClientGenerated?.(client)) || client

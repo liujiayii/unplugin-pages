@@ -11,14 +11,14 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (userOption
   const ctx: PageContext = new PageContext(userOptions)
   //  ctx.setLogger(config.logger)
   return ({
-    name: 'unplugin-pages',
+    name: 'unplugin-convention-routes',
     buildEnd() {
       ctx.watcher?.close()
     },
     resolveId(id) {
       //  console.log('resolveId', id)
-      if (['~unplugin-pages/react', '~unplugin-pages/vue', '~unplugin-pages/solid'].includes(id)) {
-        return path.resolve(process.cwd(), 'node_modules', '~unplugin-pages', `${id.split('/')[1]}.js`)
+      if (['~unplugin-convention-routes/react', '~unplugin-convention-routes/vue', '~unplugin-convention-routes/solid'].includes(id)) {
+        return path.resolve(process.cwd(), 'node_modules', '~unplugin-convention-routes', `${id.split('/')[1]}.js`)
       }
       return null
     },

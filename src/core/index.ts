@@ -3,14 +3,13 @@ import type { UserOptions } from './types'
 import { MODULE_ID_VIRTUAL, ROUTE_BLOCK_ID_VIRTUAL, routeBlockQueryRE } from './constants'
 
 import { PageContext } from './context'
-import { initVirtualPackage } from './initVirualPackage'
 import { parsePageRequest } from './utils'
 
 function pagesPlugin(userOptions: UserOptions = {}): Plugin {
   let ctx: PageContext
 
   return {
-    name: 'unplugin-pages',
+    name: 'unplugin-convention-routes',
     enforce: 'pre',
     async configResolved(config) {
       // auto set resolver for react project
