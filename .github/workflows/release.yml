@@ -1,0 +1,47 @@
+# action名称
+name: Push Release
+
+# 当创建v开头的tags时，执行该任务
+on:
+  push:
+    tags:
+      - 'v*'
+
+# 任务
+jobs:
+  # publish-npm任务
+  publish-npm:
+    # 在ubuntu最新版本的虚拟机执行
+    runs-on: ubuntu-latest
+    steps:
+      # 检查并切换到main分支
+      - name: 检查main分支
+        # 使用actions/checkout插件
+        uses: actions/checkout@v4
+      # 发布NPM包
+      - name: Install Pnpm
+        uses: pnpm/action-setup@v4
+      # 安装node
+      - name: 设置Node.js
+        # 使用actions/setup-node插件
+        uses: actions/setup-node@v4
+        with:
+          # node版本
+          node-version: 20
+          cache: pnpm
+      - name: Run npm scripts
+        run: |
+          node -v
+          pnpm -v
+          pnpm install
+      - name: Run build
+        run: |
+          pnpm run build
+      - name: 发布NPM包
+        # 执行发布代码
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          npm publish
+        env:
+          # 配置 npm access token 环境变量
+          NPM_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}

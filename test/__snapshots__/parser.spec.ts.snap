@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`parser > custom block 1`] = `
+{
+  "meta": {
+    "requiresAuth": false,
+  },
+  "name": "blog-id",
+}
+`;
+
+exports[`parser > jsx yaml comment 1`] = `
+{
+  "meta": {
+    "id": 1234,
+    "requiresAuth": false,
+  },
+  "name": "blog-id",
+}
+`;

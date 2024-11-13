@@ -1,0 +1,25 @@
+{
+  "name": "rsbuild-react",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@9.12.1",
+  "scripts": {
+    "dev": "DEBUG=rsbuild rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "6.27.0"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.0.13",
+    "@rsbuild/plugin-react": "^1.0.3",
+    "@types/node": "^22.7.6",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "unplugin-pages": "workspace:*"
+  }
+}

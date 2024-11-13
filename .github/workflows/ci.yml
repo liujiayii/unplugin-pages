@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  VITEST_SEGFAULT_RETRY: 3
+  PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}/.cache/ms-playwright
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        node_version: [18, 20]
+        include:
+          # Active LTS + other OS
+          - os: macos-latest
+            node_version: 20
+          - os: windows-latest
+            node_version: 20
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Set node version to ${{ matrix.node_version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node_version }}
+          registry-url: https://registry.npmjs.org/
+          cache: pnpm
+
+      - name: Resolve playwright version
+        id: playwright-version
+        shell: bash
+        run: >
+          echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package.json').devDependencies['playwright'])")" >> $GITHUB_OUTPUT
+
+      - name: Print playwright version
+        shell: bash
+        run: echo "${{ toJson(steps.playwright-version.outputs) }}"
+
+      - name: Cache Playwright v${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ${{ env.PLAYWRIGHT_BROWSERS_PATH }}
+          key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.PLAYWRIGHT_VERSION }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps
+
+      - name: Run build
+        run: pnpm build
+
+      - name: Run test
+        run: pnpm test
+
+      - name: Run E2E test
+        run: pnpm test:e2e
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Set node version
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install deps
+        run: pnpm install
+
+      - name: Lint
+        run: pnpm lint
