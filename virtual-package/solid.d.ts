@@ -1,4 +1,4 @@
-declare module '~unplugin-pages/solid' {
+declare module '~unplugin-convention-routes/solid' {
   import type { RouteDefinition } from '@solidjs/router'
 
   const routes: RouteDefinition[]

@@ -55,7 +55,7 @@ describe('generate routes', () => {
 
   it('vue - import absolute path match snapshot', async () => {
     const root = slash(process.cwd())
-    const mock = `/mock/fs/unplugin-pages${root.endsWith('/') ? '/' : ''}`
+    const mock = `/mock/fs/unplugin-convention-routes${root.endsWith('/') ? '/' : ''}`
     const ctx = new PageContext({
       dirs: 'examples/vue/src/pages',
       importPath: 'absolute',

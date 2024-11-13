@@ -1,4 +1,4 @@
-declare module '~unplugin-pages/vue' {
+declare module '~unplugin-convention-routes/vue' {
   import type { RouteRecordRaw } from 'vue-router'
 
   const routes: RouteRecordRaw[]

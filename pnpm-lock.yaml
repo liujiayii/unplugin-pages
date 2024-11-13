@@ -142,7 +142,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:
@@ -185,7 +185,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:
@@ -222,7 +222,7 @@ importers:
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
 
@@ -259,7 +259,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:
@@ -281,7 +281,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:
@@ -315,7 +315,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:
@@ -379,7 +379,7 @@ importers:
       typescript:
         specifier: ^5.6.2
         version: 5.6.3
-      unplugin-pages:
+      unplugin-convention-routes:
         specifier: workspace:*
         version: link:../..
       vite:

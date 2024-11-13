@@ -3,7 +3,7 @@ import path from 'node:path'
 import process from 'node:process'
 
 export function initVirtualPackage(): void {
-  copyFile('node_modules/unplugin-pages/virtual-package', 'node_modules/.unplugin-pages')
+  copyFile('node_modules/unplugin-convention-routes/virtual-package', 'node_modules/.unplugin-convention-routes')
 }
 
 /**

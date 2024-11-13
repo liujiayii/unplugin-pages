@@ -1,6 +1,6 @@
 import VuePlugin from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import Pages from 'unplugin-pages'
+import Pages from 'unplugin-convention-routes'
 
 const config = defineConfig({
   plugins: [

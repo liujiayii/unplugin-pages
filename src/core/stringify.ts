@@ -9,7 +9,7 @@ const hasFunctionRE = /"(?:props|beforeEnter)":("(.*?)")/g
 const multilineCommentsRE = /\/\*(.|[\r\n])*?\*\//g
 const singlelineCommentsRE = /\/\/.*/g
 
-function replaceFunction(_: any, value: any) {
+function replaceFunction(_: any, value: any): any {
   if (value instanceof Function || typeof value === 'function') {
     const fnBody = value.toString()
       .replace(multilineCommentsRE, '')
@@ -32,10 +32,13 @@ function replaceFunction(_: any, value: any) {
 export function stringifyRoutes(
   preparedRoutes: any[],
   options: ResolvedOptions,
-) {
+): {
+    imports: string[]
+    stringRoutes: string
+  } {
   const importsMap: Map<string, string> = new Map()
 
-  function getImportString(path: string, importName: string) {
+  function getImportString(path: string, importName: string): string {
     const mode = resolveImportMode(path, options)
     return mode === 'sync'
       ? `import ${importName} from "${path}"`
@@ -44,7 +47,7 @@ export function stringifyRoutes(
       }`
   }
 
-  function componentReplacer(str: string, replaceStr: string, path: string) {
+  function componentReplacer(str: string, replaceStr: string, path: string): string {
     let importName = importsMap.get(path)
 
     if (!importName)
@@ -57,7 +60,7 @@ export function stringifyRoutes(
     return str.replace(replaceStr, importName)
   }
 
-  function functionReplacer(str: string, replaceStr: string, content: string) {
+  function functionReplacer(str: string, replaceStr: string, content: string): string {
     if (content.startsWith('function'))
       return str.replace(replaceStr, content)
 
@@ -80,7 +83,7 @@ export function stringifyRoutes(
   }
 }
 
-export function generateClientCode(routes: any[], options: ResolvedOptions) {
+export function generateClientCode(routes: any[], options: ResolvedOptions): string {
   const { imports, stringRoutes } = stringifyRoutes(routes, options)
   const code = `${imports.join(';\n')};\n\nconst routes = ${stringRoutes};\n\nexport default routes;`
   return options.resolver.stringify?.final?.(code) || code

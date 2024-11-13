@@ -1,4 +1,4 @@
-import routes from '~unplugin-pages/react'
+import routes from '~unplugin-convention-routes/react'
 import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 

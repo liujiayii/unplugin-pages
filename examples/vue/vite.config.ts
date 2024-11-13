@@ -2,7 +2,7 @@ import { resolve } from 'node:path'
 import Vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
-import Pages from 'unplugin-pages'
+import Pages from 'unplugin-convention-routes'
 import Markdown from 'vite-plugin-vue-markdown'
 
 const config = defineConfig({

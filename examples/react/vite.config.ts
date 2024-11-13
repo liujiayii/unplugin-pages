@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react'
-import Pages from 'unplugin-pages/vite'
+import Pages from 'unplugin-convention-routes/vite'
 import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/

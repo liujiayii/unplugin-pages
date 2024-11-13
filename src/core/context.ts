@@ -1,6 +1,6 @@
 // import type { ViteDevServer } from 'vite'
 import type { PageOptions, ResolvedOptions, UserOptions } from './types'
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, writeFileSync } from 'node:fs'
 
 import path, { join, resolve } from 'node:path'
 import process from 'node:process'
@@ -132,7 +132,7 @@ export class PageContext {
   }
 
   async writeFile(): Promise<void> {
-    const fullPath = path.join(process.cwd(), 'node_modules', '~unplugin-pages')
+    const fullPath = path.join(process.cwd(), 'node_modules', '~unplugin-convention-routes')
     // console.log('writeFile', fullPath, existsSync(fullPath))
     if (!existsSync(fullPath)) {
       //   console.log('create dir', fullPath)
