@@ -28,3 +28,4 @@ pnpm i unplugin-convention-routes
 ```
 
 ## 🔨 示例
+- https://github.com/liujiayii/unplugin-convention-routes/tree/main/examples
