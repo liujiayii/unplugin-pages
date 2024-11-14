@@ -43,7 +43,7 @@ function prepareRoutes(
 }
 
 async function computeReactRoutes(ctx: PageContext): Promise<ReactRoute[]> {
-  const { routeStyle, caseSensitive, importPath } = ctx.options
+  const { routeStyle, caseSensitive = false, importPath } = ctx.options
   const nuxtStyle = routeStyle === 'nuxt'
 
   const pageRoutes = [...ctx.pageRouteMap.values()]

@@ -4,14 +4,14 @@
   "version": "0.0.1-alpha.1",
   "packageManager": "pnpm@9.12.3",
   "description": "File system base router plugin for unplugin",
-  "author": "hannoeru <me@hanlee.co>",
+  "author": "liujiayii@foxmail.com",
   "license": "MIT",
-  "homepage": "https://github.com/hannoeru/unplugin-convention-routes",
+  "homepage": "https://github.com/liujiayii/unplugin-convention-routes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hannoeru/unplugin-convention-routes"
+    "url": "https://github.com/liujiayii/unplugin-convention-routes"
   },
-  "bugs": "https://github.com/hannoeru/unplugin-convention-routes/issues",
+  "bugs": "https://github.com/liujiayii/unplugin-convention-routes/issues",
   "keywords": [
     "vite",
     "vue",
@@ -63,10 +63,6 @@
     "./types": {
       "import": "./dist/types.js",
       "require": "./dist/types.cjs"
-    },
-    "./react": {
-      "import": "./react.js",
-      "require": "./react.js"
     },
     "./*": "./*"
   },

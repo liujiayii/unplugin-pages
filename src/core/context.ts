@@ -99,7 +99,7 @@ export class PageContext {
     // debug.pages('add', path)
     for (const p of toArray(path)) {
       const pageDirPath = slash(resolve(this.root, pageDir.dir))
-      const extension = this.options.extensions.find(ext => p.endsWith(`.${ext}`))
+      const extension = this.options.extensions!.find(ext => p.endsWith(`.${ext}`))
       if (!extension)
         continue
 

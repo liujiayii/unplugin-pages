@@ -7,7 +7,9 @@ import process from 'node:process'
 import { createUnplugin } from 'unplugin'
 import { PageContext } from './core/context'
 
-export const unpluginFactory: UnpluginFactory<Options | undefined> = (userOptions: UserOptions = {}) => {
+export const unpluginFactory: UnpluginFactory<Options | undefined> = (userOptions: UserOptions = {
+  resolver: 'vue',
+}) => {
   const ctx: PageContext = new PageContext(userOptions)
   //  ctx.setLogger(config.logger)
   return ({
