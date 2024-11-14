@@ -1,7 +1,7 @@
 {
   "name": "unplugin-convention-routes",
   "type": "module",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "packageManager": "pnpm@9.12.3",
   "description": "File system base router plugin for unplugin",
   "author": "liujiayii@foxmail.com",
@@ -71,6 +71,9 @@
   "types": "dist/index.d.ts",
   "files": [
     "LICENSE",
+    "client-react.d.ts",
+    "client-solid.d.ts",
+    "client-vue.d.ts",
     "dist",
     "virtual-package"
   ],
