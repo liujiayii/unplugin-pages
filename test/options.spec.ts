@@ -1,4 +1,4 @@
-import { resolveOptions } from '../src/options'
+import { resolveOptions } from '../src/core/options'
 
 describe('options resolve', () => {
   it('vue', () => {

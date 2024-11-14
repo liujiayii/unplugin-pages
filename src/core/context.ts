@@ -135,7 +135,7 @@ export class PageContext {
     const fullPath = path.join(process.cwd(), 'node_modules', '~unplugin-convention-routes')
     // console.log('writeFile', fullPath, existsSync(fullPath))
     if (!existsSync(fullPath)) {
-      //   console.log('create dir', fullPath)
+    // console.log('create dir', fullPath)
       initVirtualPackage()
       // mkdirSync(fullPath, { recursive: true })
     }

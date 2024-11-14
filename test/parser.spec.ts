@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
-import { getRouteBlock } from '../src/customBlock'
-import { resolveOptions } from '../src/options'
+import { getRouteBlock } from '../src/core/customBlock'
+import { resolveOptions } from '../src/core/options'
 
 const options = resolveOptions({})
 

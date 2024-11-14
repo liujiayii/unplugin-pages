@@ -1,4 +1,4 @@
-import { buildReactRemixRoutePath, buildReactRoutePath, countSlash, extsToGlob, isCatchAllRoute, isDynamicRoute } from '../src/utils'
+import { buildReactRemixRoutePath, buildReactRoutePath, countSlash, extsToGlob, isCatchAllRoute, isDynamicRoute } from '../src/core/utils'
 
 describe('utils', () => {
   it('extensions to glob', () => {
