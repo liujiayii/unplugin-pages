@@ -61,7 +61,7 @@ function prepareRoutes(
 }
 
 async function computeVueRoutes(ctx: PageContext, customBlockMap: Map<string, CustomBlock>): Promise<VueRoute[]> {
-  const { routeStyle, caseSensitive, importPath, routeNameSeparator } = ctx.options
+  const { routeStyle, caseSensitive = false, importPath, routeNameSeparator } = ctx.options
 
   const pageRoutes = [...ctx.pageRouteMap.values()]
     // sort routes for HMR

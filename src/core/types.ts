@@ -66,63 +66,63 @@ export interface Options {
    * Paths to the directory to search for page components.
    * @default 'src/pages'
    */
-  dirs: string | (string | PageOptions)[]
+  dirs?: string | (string | PageOptions)[]
   /**
    * Valid file extensions for page components.
    * @default ['vue', 'js']
    */
-  extensions: string[]
+  extensions?: string[]
   /**
    * List of path globs to exclude when resolving pages.
    */
-  exclude: string[]
+  exclude?: string[]
   /**
    * Import routes directly or as async components
    * @default 'root index file => "sync", others => "async"'
    */
-  importMode: ImportMode | ImportModeResolver
+  importMode?: ImportMode | ImportModeResolver
   /**
    * Import page components from absolute or relative paths.
    * @default 'relative'
    */
-  importPath: 'absolute' | 'relative'
+  importPath?: 'absolute' | 'relative'
   /**
    * Sync load top level index file
    * @default true
    * @deprecated use `importMode` instead
    */
-  syncIndex: boolean
+  syncIndex?: boolean
   /**
    * Use Nuxt.js style route naming
    * @default false
    * @deprecated use `routeStyle` instead
    */
-  nuxtStyle: boolean
+  nuxtStyle?: boolean
   /**
    * Routing style
    * @default false
    */
-  routeStyle: 'next' | 'nuxt' | 'remix'
+  routeStyle?: 'next' | 'nuxt' | 'remix'
   /**
    * Separator for generated route names.
    * @default -
    */
-  routeNameSeparator: string
+  routeNameSeparator?: string
   /**
    * Case for route paths
    * @default false
    */
-  caseSensitive: boolean
+  caseSensitive?: boolean
   /**
    * Set the default route block parser, or use `<route lang=xxx>` in SFC route block
    * @default 'json5'
    */
-  routeBlockLang: 'json5' | 'json' | 'yaml' | 'yml'
+  routeBlockLang?: 'json5' | 'json' | 'yaml' | 'yml'
   /**
    * Module id for routes import
    * @default '~pages'
    */
-  moduleId: string
+  moduleId?: string
   /**
    * Generate React Route
    * @default 'auto detect'
@@ -145,19 +145,19 @@ export interface Options {
    * Paths to the directory to search for page components.
    * @deprecated use `dirs` instead
    */
-  pagesDir: string | (string | PageOptions)[]
+  pagesDir?: string | (string | PageOptions)[]
   /**
    * Replace '[]' to '_' in bundle filename
    * @deprecated issue #122
    */
-  replaceSquareBrackets: never
+  replaceSquareBrackets?: never
   /**
    * @name watcher
    */
   watcher?: boolean
 }
 
-export type UserOptions = Partial<Options>
+export type UserOptions = Options
 
 export interface ResolvedOptions extends Omit<Options, 'pagesDir' | 'replaceSquareBrackets' | 'nuxtStyle' | 'syncIndex' | 'moduleId'> {
   /**

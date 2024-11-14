@@ -328,6 +328,25 @@ importers:
         specifier: ^0.23.8
         version: 0.23.8(rollup@4.25.0)(vite@5.4.11(@types/node@22.9.0)(terser@5.36.0))
 
+  examples/vue-rsbuild:
+    dependencies:
+      vue:
+        specifier: ^3.5.12
+        version: 3.5.12(typescript@5.6.3)
+    devDependencies:
+      '@rsbuild/core':
+        specifier: ^1.0.13
+        version: 1.1.0
+      '@rsbuild/plugin-vue':
+        specifier: ^1.0.1
+        version: 1.0.4(@rsbuild/core@1.1.0)(@vue/compiler-sfc@3.5.12)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+      unplugin-convention-routes:
+        specifier: workspace:*
+        version: link:../..
+
   examples/vue-ssr:
     dependencies:
       vue:
@@ -1256,6 +1275,11 @@ packages:
 
   '@rsbuild/plugin-react@1.0.7':
     resolution: {integrity: sha512-t7T/GqDwodusTAnxGpqVRnQ/G+HYh98zk71qIg19WkjVJJGv57AC1Ppx0/6zzbZAbxU60bfK8TeEEXjhXCdSxA==}
+    peerDependencies:
+      '@rsbuild/core': 1.x
+
+  '@rsbuild/plugin-vue@1.0.4':
+    resolution: {integrity: sha512-5Ue3ufWUVllJG1N7GDiTIELbIZZvIzWcDjO62bIYvtcLCG19sL0PPuBge4tXl+mlW2ncJYBoUsVI5aee9qNTWw==}
     peerDependencies:
       '@rsbuild/core': 1.x
 
@@ -3979,6 +4003,18 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
+  vue-loader@17.4.2:
+    resolution: {integrity: sha512-yTKOA4R/VN4jqjw4y5HrynFL8AK0Z3/Jt7eOJXEitsm0GMRHDBjCfCiuTiLP7OESvsZYo2pATCWhDqxC5ZrM6w==}
+    peerDependencies:
+      '@vue/compiler-sfc': '*'
+      vue: '*'
+      webpack: ^4.1.0 || ^5.0.0-0
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+      vue:
+        optional: true
+
   vue-router@4.2.5:
     resolution: {integrity: sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==}
     peerDependencies:
@@ -4788,6 +4824,19 @@ snapshots:
       '@rsbuild/core': 1.1.0
       '@rspack/plugin-react-refresh': 1.0.0(react-refresh@0.14.2)
       react-refresh: 0.14.2
+
+  '@rsbuild/plugin-vue@1.0.4(@rsbuild/core@1.1.0)(@vue/compiler-sfc@3.5.12)(esbuild@0.24.0)(vue@3.5.12(typescript@5.6.3))':
+    dependencies:
+      '@rsbuild/core': 1.1.0
+      vue-loader: 17.4.2(@vue/compiler-sfc@3.5.12)(vue@3.5.12(typescript@5.6.3))(webpack@5.96.1(esbuild@0.24.0))
+      webpack: 5.96.1(esbuild@0.24.0)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@vue/compiler-sfc'
+      - esbuild
+      - uglify-js
+      - vue
+      - webpack-cli
 
   '@rspack/binding-darwin-arm64@1.1.1':
     optional: true
@@ -7924,6 +7973,16 @@ snapshots:
       semver: 7.6.3
     transitivePeerDependencies:
       - supports-color
+
+  vue-loader@17.4.2(@vue/compiler-sfc@3.5.12)(vue@3.5.12(typescript@5.6.3))(webpack@5.96.1(esbuild@0.24.0)):
+    dependencies:
+      chalk: 4.1.2
+      hash-sum: 2.0.0
+      watchpack: 2.4.2
+      webpack: 5.96.1(esbuild@0.24.0)
+    optionalDependencies:
+      '@vue/compiler-sfc': 3.5.12
+      vue: 3.5.12(typescript@5.6.3)
 
   vue-router@4.2.5(vue@3.5.12(typescript@5.6.3)):
     dependencies:

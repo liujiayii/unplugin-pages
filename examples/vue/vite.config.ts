@@ -11,6 +11,7 @@ const config = defineConfig({
       include: [/\.vue$/, /\.md$/],
     }),
     Pages({
+      resolver: 'vue',
       dirs: [
         // issue #68
         { dir: resolve(__dirname, './src/pages'), baseRoute: '' },
@@ -33,11 +34,11 @@ const config = defineConfig({
       },
     }),
     // test multiple instances
-    Pages({
-      dirs: '../react/src/pages',
-      resolver: 'react',
-      moduleId: '~admin-pages',
-    }),
+    // Pages({
+    //   dirs: '../react/src/pages',
+    //   resolver: 'react',
+    //   moduleId: '~admin-pages',
+    // }),
     Markdown(),
     Inspect(),
   ],
