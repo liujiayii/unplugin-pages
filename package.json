@@ -157,7 +157,7 @@
     "@vue/compiler-sfc": "^3.5.12",
     "bumpp": "^9.5.2",
     "chalk": "^5.3.0",
-    "eslint": "^9.9.1",
+    "eslint": "^9.15.0",
     "esno": "^4.7.0",
     "fast-glob": "^3.3.2",
     "nodemon": "^3.1.4",
